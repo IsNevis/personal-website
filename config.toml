@@ -1,12 +1,8 @@
 baseURL = "http://www.example.com"
 title = "Nevis"
 theme = "hugo-coder"
-languageCode = "en"
-defaultContentLanguage = "en"
+languageCode = "en-us"
 paginate = 20
-pygmentsStyle = "bw"
-pygmentsCodeFences = true
-pygmentsCodeFencesGuessSyntax = true
 enableEmoji = true
 # Enable Disqus comments
 # disqusShortname = "yourdiscussshortname"
@@ -41,6 +37,73 @@ customCSS = []
 customSCSS = []
 # Custom JS
 customJS = []
+
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[permalinks]
+posts = "/blogs/:slug"
+
+#######################################
+#                                     #
+#               Social                #
+#                                     #
+#######################################
+
+[[params.social]]
+name = "Github"
+icon = "fa fa-2x fa-github"
+weight = 1
+url = "https://github.com/IsNevis/"
+
+[[params.social]]
+name = "Twitter"
+icon = "fa fa-2x fa-twitter"
+weight = 2
+url = "https://twitter.com/nevis/"
+
+[[params.social]]
+name = "RSS"
+icon = "fa fa-2x fa-rss"
+weight = 3
+url = "https://myhugosite.com/index.xml"
+rel = "alternate"
+type = "application/rss+xml"
+
+#######################################
+#                                     #
+#              Main Menu              #
+#                                     #
+#######################################
+
+[[menu.main]]
+name = "About"
+weight = 1
+url = "about/"
+
+[[menu.main]]
+name = "Blog"
+weight = 2
+url = "blogs/"
+
+[[menu.main]]
+name = "Projects"
+weight = 3
+url = "projects/"
+
+[[menu.main]]
+name = "Contact me"
+weight = 5
+url = "contact/"
+
+#######################################
+#                                     #
+#                  WTF                #
+#                                     #
+#######################################
+
 
 # If you want to use fathom(https://usefathom.com) for analytics, add this section
 # [params.fathomAnalytics]
@@ -97,62 +160,14 @@ prefetchsrc = ["'self'"]
 # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
 connectsrc = ["'self'", "https://www.google-analytics.com"]
 
-[taxonomies]
-category = "categories"
-series = "series"
-tag = "tags"
-author = "authors"
+#######################################
+#                                     #
+#                Other                #
+#                                     #
+#######################################
 
-[[params.social]]
-name = "Github"
-icon = "fa fa-2x fa-github"
-weight = 1
-url = "https://github.com/IsNevis/"
 
-[[params.social]]
-name = "Twitter"
-icon = "fa fa-2x fa-twitter"
-weight = 2
-url = "https://twitter.com/nevis/"
-
-[[params.social]]
-name = "RSS"
-icon = "fa fa-2x fa-rss"
-weight = 3
-url = "https://myhugosite.com/index.xml"
-rel = "alternate"
-type = "application/rss+xml"
-
-[languages.en]
-languageName = ":uk:"
-
-[[languages.en.menu.main]]
-name = "About"
-weight = 1
-url = "about/"
-
-[[languages.en.menu.main]]
-name = "Blog"
-weight = 2
-url = "blogs/"
-
-[[languages.en.menu.main]]
-name = "Projects"
-weight = 3
-url = "projects/"
-
-[[languages.en.menu.main]]
-name = "Contact me"
-weight = 5
-url = "contact/"
-
-[[languages.en.menu.main]]
-name = "Creator"
-weight = 4
-url = "creator/"
-
-# User Config
-
-disableComments = true
-enableEmoji = true
-
+[markup]
+  [markup.highlight]
+    guessSyntax = true
+    style = 'dracula'
