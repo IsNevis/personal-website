@@ -1,26 +1,19 @@
-baseurl: https://example.com
+# baseurl: https://example.com
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 5
-title: Example Site
+title: Nevis
 
-languages:
-    en:
-        languageName: English
-        title: Example Site
-        weight: 1
-    zh-cn:
-        languageName: 中文
-        title: 演示站点
-        weight: 2
-    ar:
-        languageName: عربي
-        languagedirection: rtl
-        title: موقع تجريبي
-        weight: 3
+enableEmoji: true
+
+# languages:
+#     en:
+#         languageName: English
+#         title: Nevis
+#         weight: 1
 
 # Change it to your Disqus shortname before using
-disqusShortname: hugo-theme-stack
+disqusShortname: hugo-nevis
 
 # GA Tracking ID
 googleAnalytics:
@@ -45,16 +38,16 @@ params:
     favicon:
 
     footer:
-        since: 2020
+        # since: 2020
         customText:
 
     dateFormat:
-        published: Jan 02, 2006
-        lastUpdated: Jan 02, 2006 15:04 MST
+        published: January 2, 2006 
+        lastUpdated: January 2, 2006 15:04 MST
 
     sidebar:
-        emoji: 🍥
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        # emoji: 🍥
+        subtitle: I only code stuff, which i enjoy doing! or which involves money xD
         avatar:
             enabled: true
             local: true
@@ -66,10 +59,10 @@ params:
         readingTime: true
         license:
             enabled: true
-            default: Licensed under CC BY-NC-SA 4.0
+            default: Licensed under AGPL-3.0-only
 
     comments:
-        enabled: true
+        enabled: false
         provider: disqus
 
         disqusjs:
@@ -179,24 +172,54 @@ params:
         toggle: true
 
         # Available values: auto, light, dark
-        default: auto
+        default: dark
 
     imageProcessing:
         cover:
             enabled: true
         content:
             enabled: true
+    csp: 
+        childsrc: ["'self'"]
+        fontsrc: ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
+        formaction: ["'self'"]
+        framesrc: ["'self'"]
+        imgsrc: ["'self'"]
+        objectsrc: ["'none'"]
+        stylesrc: [
+            "'self'",
+            "'unsafe-inline'",
+            "https://fonts.googleapis.com/",
+            "https://cdn.jsdelivr.net/"
+        ]
+        scriptsrc: [
+            "'self'",
+            "'unsafe-inline'",
+            "https://www.google-analytics.com",
+            "https://cdn.jsdelivr.net/"
+        ]
+        prefetchsrc: ["'self'"]
+        # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
+        connectsrc: ["'self'", "https://www.google-analytics.com"]
 
 ### Custom menu
 ### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
 ### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
 menu:
-    main: []
+    # main: []
+    main:
+        - identifier: contact
+          name: Contact
+          url: /contact/
+          weight: -101
+        #   params:
+        #     icon: contact
+        #     newTab: true
 
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
+          url: https://github.com/IsNevis/
           params:
               icon: brand-github
 
@@ -205,6 +228,12 @@ menu:
           url: https://twitter.com
           params:
               icon: brand-twitter
+
+        - identifier: rss
+          name: RSS
+          url: localhost/index.xml
+          params:
+              icon: rss
 
 related:
     includeNewer: true
@@ -234,3 +263,4 @@ markup:
         lineNos: true
         lineNumbersInTable: true
         tabWidth: 4
+        style: dracula
